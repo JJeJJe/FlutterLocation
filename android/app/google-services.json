@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "484459115383",
+    "firebase_url": "https://locfb-b06ee.firebaseio.com",
+    "project_id": "locfb-b06ee",
+    "storage_bucket": "locfb-b06ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484459115383:android:cf7763983e9e9301",
+        "android_client_info": {
+          "package_name": "com.baseflow.geolocatorexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484459115383-d7oo265eua9e8vtkm4edhlc2mju9d1nb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfG_JogC2ZeACHXC0lGnf1BRXcH89wWDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484459115383-d7oo265eua9e8vtkm4edhlc2mju9d1nb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484459115383:android:c64b9ff23a905b88",
+        "android_client_info": {
+          "package_name": "com.example.locatr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484459115383-d7oo265eua9e8vtkm4edhlc2mju9d1nb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfG_JogC2ZeACHXC0lGnf1BRXcH89wWDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484459115383-d7oo265eua9e8vtkm4edhlc2mju9d1nb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

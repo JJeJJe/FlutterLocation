@@ -1,0 +1,125 @@
+import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:maps_testing/new_screen.dart';
+
+class MapScreen extends StatefulWidget {
+  @override
+  _MapScreenState createState() => _MapScreenState();
+}
+
+class _MapScreenState extends State<MapScreen> {
+  GoogleMapController mapController;
+  var _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool markersVisible = true;
+
+  String error;
+
+  Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
+
+  @override
+  Widget build(BuildContext context) {
+    double _screenWidth = MediaQuery.of(context).size.width;
+    double _screenHeight = MediaQuery.of(context).size.height;
+    return Scaffold(
+        key: _scaffoldKey,
+        drawer: Drawer(
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            child: Center(
+              child: Text('Press anywhere to test the bug'),
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NewScreen(),
+                ),
+              );
+            },
+          ),
+        ),
+        body: Stack(children: <Widget>[
+          Center(
+              child: GoogleMap(
+                initialCameraPosition: CameraPosition(
+                  bearing: 0.0,
+                  target: LatLng(48.8566,2.3522),
+                  tilt: 0.0,
+                  zoom: 18.0,
+                ),
+                mapType: MapType.normal,
+                onMapCreated: _onMapCreated,
+                tiltGesturesEnabled: false,
+                myLocationEnabled: true,
+                compassEnabled: false,
+                markers:  Set<Marker>.of(markers.values)
+
+
+
+              ),
+          ),
+
+        ]),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton:
+      Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Stack(
+              alignment: Alignment.bottomCenter,
+              children: <Widget>[
+                Container(
+                  height: 100.0,
+                  width: 100.0,
+                  child: FloatingActionButton(
+                    heroTag: 'call',
+                    shape: CircleBorder(
+                      side: BorderSide(
+                        color: Colors.white24,
+                        width: 4.0,
+                      ),
+                    ),
+                    tooltip: 'Call',
+                  ),
+                ),
+              ],
+            ),
+          ],
+        )
+      ]),
+    );
+  }
+
+  void _onMapCreated(GoogleMapController controller) {
+
+    mapController = controller;
+
+    final Marker marker2 =  Marker(
+          markerId: MarkerId('2233'),
+          position: LatLng(44.4110224, 26.0712143),
+
+          infoWindow: InfoWindow(title: "Mega Image", snippet: "Bulevardul Lacul Tei"),
+          icon: BitmapDescriptor.defaultMarkerWithHue(
+              BitmapDescriptor.hueGreen),
+          consumeTapEvents: false);
+
+  markers[MarkerId('2233')] = marker2;
+
+
+//    setState(() {});
+  }
+
+
+
+  void _showMarkers(bool flag, GoogleMapController controller) {
+    if (flag == true) {
+      setState(() {
+
+
+      });
+    }
+  }
+}
